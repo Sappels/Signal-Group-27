@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
-        timeToSpawn = Random.Range(1, 8);
+        timeToSpawn = Random.Range(1f, 8f);
         spawnTimer = timeToSpawn;
     }
 
@@ -27,7 +27,7 @@ public class ObstacleSpawner : MonoBehaviour
             }
             diceRoll = 0;
 
-            timeToSpawn = Random.Range(3, 7);
+            timeToSpawn = Random.Range(3f, 5f);
             spawnTimer = timeToSpawn;
         }
     }

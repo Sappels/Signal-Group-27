@@ -15,6 +15,6 @@ public class Rock : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rockRB.AddRelativeForce(Vector3.forward * speed);
+        rockRB.AddRelativeForce((Vector3.forward * speed) * GameManager.Instance.gameSpeed);
     }
 }
