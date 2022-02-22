@@ -3,6 +3,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject rock;
+    public GameObject fuelTank;
 
     private float timeToSpawn;
     private float spawnTimer;
@@ -23,7 +24,14 @@ public class ObstacleSpawner : MonoBehaviour
             diceRoll = Random.Range(1, 4);
             if (diceRoll == 1 || diceRoll == 2)
             {
-                Instantiate(rock, transform.position, Quaternion.identity);
+                if (Random.value > 0.9f)
+                {
+                    Instantiate(fuelTank, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(rock, transform.position, Quaternion.identity);
+                }
             }
             diceRoll = 0;
 

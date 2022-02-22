@@ -9,5 +9,9 @@ public class ObstacleDestroyer : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("FuelTank"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
