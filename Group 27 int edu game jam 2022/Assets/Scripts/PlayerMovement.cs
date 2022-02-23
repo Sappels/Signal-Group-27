@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
             targetRotation = rotationRight;
         }
 
+        if (!Input.anyKey)
+        {
+            targetRotation = resetRotation;
+        }
+
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (0.3f * Time.deltaTime * 10));
 
