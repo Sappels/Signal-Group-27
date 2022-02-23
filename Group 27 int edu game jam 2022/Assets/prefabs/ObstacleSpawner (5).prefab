@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1217050904884583257
+--- !u!1 &8561785133168031524
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5600057650336300387}
-  - component: {fileID: 3767171370917828581}
-  - component: {fileID: 9035321645118908416}
-  - component: {fileID: 5298558525298466572}
-  - component: {fileID: 18244052279024958}
+  - component: {fileID: 3135949745944858910}
+  - component: {fileID: 5941911512025267096}
+  - component: {fileID: 1968546122073900157}
+  - component: {fileID: 7382129523629699395}
   m_Layer: 0
-  m_Name: ObstacleSpawner
+  m_Name: ObstacleSpawner (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5600057650336300387
+--- !u!4 &3135949745944858910
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217050904884583257}
+  m_GameObject: {fileID: 8561785133168031524}
   m_LocalRotation: {x: -0.00034529547, y: -0, z: -0, w: 0.99999994}
-  m_LocalPosition: {x: -22.256542, y: 81.47859, z: -98.534256}
+  m_LocalPosition: {x: 3.71, y: 0, z: 0}
   m_LocalScale: {x: 5.1848235, y: 3.8638, z: 3.8638}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.04, y: 0, z: 0}
---- !u!33 &3767171370917828581
+--- !u!33 &5941911512025267096
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217050904884583257}
+  m_GameObject: {fileID: 8561785133168031524}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &9035321645118908416
+--- !u!23 &1968546122073900157
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217050904884583257}
+  m_GameObject: {fileID: 8561785133168031524}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,28 +84,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5298558525298466572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217050904884583257}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &18244052279024958
+--- !u!114 &7382129523629699395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217050904884583257}
+  m_GameObject: {fileID: 8561785133168031524}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 354665d88b4e74845859a7734d77e741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelTank: {fileID: 3191477014673228048, guid: a1850b998099e1a49880268886c65eff, type: 3}
+  obstacles:
+  - {fileID: 6802837769741496281, guid: 5f7e41410a9ad074e89d25a2e4c3ad10, type: 3}
+  - {fileID: 5522021548148200683, guid: e9d63cb1646991a46879fe7f8dc38be4, type: 3}
+  - {fileID: 7576636311167508293, guid: 3b9f75ba8aed5084ab5fcf5f88ff6b88, type: 3}
+  - {fileID: 5505240792227971188, guid: e8f560e741eeebc4da0209067fe03a23, type: 3}
+  - {fileID: 9172671030596060580, guid: a5257a4e94dbb1a41be15474ef0a49ea, type: 3}
+  - {fileID: 3925376258888271226, guid: e8f97fa4212486e49b5230aab9381c41, type: 3}
+  - {fileID: 4680101475442252101, guid: 9fdc65d5bb0bd494d819eb1cb9b6c216, type: 3}
+  - {fileID: 7166165095853906888, guid: a8e74331bf9202946b69e1af5c44be67, type: 3}
+  - {fileID: 1819420269185403453, guid: 39b30d1596e975b4ca5a2a0b0b6a921b, type: 3}
+  - {fileID: 3660077956594878251, guid: 3fdcd648fc67f2943a7b62c29165072b, type: 3}
+  - {fileID: 4220621448066539192, guid: 1fcc1261f5745884eb1ca7a1820277e9, type: 3}
+  - {fileID: 6374254833892046600, guid: 78774c2bd947b4f4fb50fc98122fd8ff, type: 3}
+  - {fileID: 6491589710097232721, guid: e70b16c3aa8d75544ba8129e18c27995, type: 3}
+  - {fileID: 6195770341967440185, guid: a1028166f444d8545bf9a85d3f972aac, type: 3}

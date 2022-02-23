@@ -30,7 +30,8 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 if (Random.value > 0.9f)
                 {
-                    Instantiate(fuelTank, transform.position, Quaternion.identity);
+                    Debug.Log("fueltime!");
+                    Instantiate(fuelTank, transform.position, Quaternion.Euler(-15, 0, 0));
                 }
                 else
                 {
