@@ -11,7 +11,6 @@ public class FiringMaLazah : MonoBehaviour
 
     public float fuelCapacity = 3;
 
-<<<<<<< HEAD
     float realFuel;
 
     
@@ -23,8 +22,6 @@ public class FiringMaLazah : MonoBehaviour
     }
 
     // Update is called once per frame
-=======
->>>>>>> 37cc7927ba348897fbfe4a91f64cbcc13461763b
     void Update()
     {
         

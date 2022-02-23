@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public bool outOfFuel;
 
     public GameObject player;
-    public FiringMaLazah lazah;
+    private FiringMaLazah lazah;
 
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
