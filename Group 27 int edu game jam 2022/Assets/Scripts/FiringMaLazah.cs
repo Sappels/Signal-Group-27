@@ -7,7 +7,7 @@ public class FiringMaLazah : MonoBehaviour
 
     [SerializeField] ParticleSystem fireFX;
 
-    [SerializeField] float fuelCapacity = 3;
+    public float fuelCapacity = 3;
 
     // Update is called once per frame
     void Update()

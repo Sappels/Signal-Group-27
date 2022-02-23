@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public float gameSpeed;
+    public bool hasBeenHit;
+    public bool outOfFuel;
+
+    public GameObject player;
+    private FiringMaLazah lazah;
+
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
-
-    public float gameSpeed;
 
     void Start()
     {
@@ -15,5 +20,19 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        lazah = player.GetComponent<FiringMaLazah>();
+    }
+
+    private void Update()
+    {
+        if (lazah.fuelCapacity <= 0 )
+        {
+            outOfFuel = true;
+        }
+        else
+        {
+            outOfFuel = false;
+        }
     }
 }

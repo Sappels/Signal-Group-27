@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
     public float score;
 
 
-    private float timer = 5;
+    private float timer = 3;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class Score : MonoBehaviour
     {
         timer -= Time.deltaTime;
         scoreText.text = "Score: " + (int)score;
-        if (timer <= 3)
+        if (timer <= 0)
         {
             score += ((Time.deltaTime * 10) * GameManager.Instance.gameSpeed);
         }
