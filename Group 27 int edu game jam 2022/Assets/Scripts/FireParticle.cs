@@ -30,9 +30,11 @@ public class FireParticle : MonoBehaviour
             if(float.Parse(other.gameObject.name) <= 0)
             {
                 Destroy(other.gameObject);
+                GameObject.Find("SFXCrumble").GetComponent<AudioSource>().pitch = Random.Range(0.7f, 2f);
+                GameObject.Find("SFXCrumble").GetComponent<AudioSource>().Play();
             }
         }
-        else if (other.gameObject.tag == "Obstacle")
+        else if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Tree")
         {
             other.gameObject.tag = "ObstacleMAFF";
             other.gameObject.name = "0,1";

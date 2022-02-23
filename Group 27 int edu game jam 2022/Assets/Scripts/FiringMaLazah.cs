@@ -15,7 +15,8 @@ public class FiringMaLazah : MonoBehaviour
 
     float realFuel;
 
-    
+    bool started = false;
+
     float cooldownTimer = 0;
     float cooldown2;
 
@@ -47,10 +48,35 @@ public class FiringMaLazah : MonoBehaviour
                     cooldown2 = 0.05f;
                     Instantiate(fireParticle, transform.position, Quaternion.Euler(0,0,0));
                 }
+                if(started == false)
+                {
+                    started = true;
+                    float pitch = Random.Range(0.9f, 1.1f);
+                    GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().pitch = pitch;
+                    GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Play();
+                }
             }
             else if(realFuel <= 0)
             {
                 GameObject.Find("FuelBar").transform.localScale = new Vector3(0, GameObject.Find("FuelBar").transform.localScale.y, GameObject.Find("FuelBar").transform.localScale.z);
+
+                GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Stop();
+                if (started)
+                {
+                    GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().Play();
+                    started = false;
+                }
+            }
+        }
+        else
+        {
+            GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Stop();
+            if(started)
+            {
+                float pitch = Random.Range(0.6f, 1.4f);
+                GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().pitch = pitch;
+                GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().Play();
+                started = false;
             }
         }
     }
