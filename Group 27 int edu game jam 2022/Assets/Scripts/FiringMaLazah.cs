@@ -8,8 +8,11 @@ public class FiringMaLazah : MonoBehaviour
     float maxWidth = 18;
 
     [SerializeField] GameObject fireParticle;
-
     [SerializeField] ParticleSystem fireFX;
+    [SerializeField] GameObject fuelBar;
+
+    private AudioSource SFXFireLoopAS;
+    private AudioSource SFXFireEndAS;
 
     public float fuelCapacity = 3;
 
@@ -22,12 +25,15 @@ public class FiringMaLazah : MonoBehaviour
 
     private void Start()
     {
+        fuelBar = GameObject.Find("FuelBar");
+        SFXFireLoopAS = GameObject.Find("SFXFireLoop").GetComponent<AudioSource>();
+        SFXFireEndAS = GameObject.Find("SFXFireEnd").GetComponent<AudioSource>();
+
         maxWidth = GameObject.Find("FuelBar").transform.localScale.x;
 
         realFuel = fuelCapacity;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -41,7 +47,7 @@ public class FiringMaLazah : MonoBehaviour
             {
                 realFuel -= Time.deltaTime;
                 fireFX.Play();
-                GameObject.Find("FuelBar").transform.localScale = new Vector3(realFuel / fuelCapacity * maxWidth, GameObject.Find("FuelBar").transform.localScale.y, GameObject.Find("FuelBar").transform.localScale.z);
+                fuelBar.transform.localScale = new Vector3(realFuel / fuelCapacity * maxWidth, fuelBar.transform.localScale.y, fuelBar.transform.localScale.z);
 
                 if(cooldown2 <= 0)
                 {
@@ -52,30 +58,30 @@ public class FiringMaLazah : MonoBehaviour
                 {
                     started = true;
                     float pitch = Random.Range(0.9f, 1.1f);
-                    GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().pitch = pitch;
-                    GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Play();
+                    SFXFireLoopAS.pitch = pitch;
+                    SFXFireLoopAS.Play();
                 }
             }
             else if(realFuel <= 0)
             {
-                GameObject.Find("FuelBar").transform.localScale = new Vector3(0, GameObject.Find("FuelBar").transform.localScale.y, GameObject.Find("FuelBar").transform.localScale.z);
+                fuelBar.transform.localScale = new Vector3(0, fuelBar.transform.localScale.y, fuelBar.transform.localScale.z);
 
-                GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Stop();
+                SFXFireLoopAS.Stop();
                 if (started)
                 {
-                    GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().Play();
+                    SFXFireEndAS.Play();
                     started = false;
                 }
             }
         }
         else
         {
-            GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Stop();
+            SFXFireLoopAS.Stop();
             if(started)
             {
                 float pitch = Random.Range(0.6f, 1.4f);
-                GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().pitch = pitch;
-                GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().Play();
+                SFXFireEndAS.pitch = pitch;
+                SFXFireEndAS.Play();
                 started = false;
             }
         }
@@ -87,7 +93,7 @@ public class FiringMaLazah : MonoBehaviour
         {
             Destroy(other.gameObject);
             realFuel = Mathf.Clamp(realFuel + fuelCapacity / 2, -1, fuelCapacity);
-            GameObject.Find("FuelBar").transform.localScale = new Vector3(realFuel / fuelCapacity * maxWidth, GameObject.Find("FuelBar").transform.localScale.y, GameObject.Find("FuelBar").transform.localScale.z);
+            fuelBar.transform.localScale = new Vector3(realFuel / fuelCapacity * maxWidth, fuelBar.transform.localScale.y, fuelBar.transform.localScale.z);
 
             cooldownTimer = 0.1f;
         }

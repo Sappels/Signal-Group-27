@@ -34,7 +34,7 @@ public class FireParticle : MonoBehaviour
                 GameObject.Find("SFXCrumble").GetComponent<AudioSource>().Play();
             }
         }
-        else if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Tree")
+        else if (other.gameObject.tag == "Tree")
         {
             other.gameObject.tag = "ObstacleMAFF";
             other.gameObject.name = "0";
