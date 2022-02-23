@@ -31,7 +31,7 @@ public class ObstacleSpawner : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.identity);
+                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.Euler(-15,0,0));
                 }
             }
 
