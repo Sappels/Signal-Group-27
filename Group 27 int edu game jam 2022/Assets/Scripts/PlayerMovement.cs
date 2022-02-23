@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
         resetRotation = targetRotation;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movementDirection = new Vector3(0, 0, 0);
 
@@ -36,9 +36,8 @@ public class PlayerMovement : MonoBehaviour
             targetRotation = resetRotation;
         }
 
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (0.3f * Time.deltaTime * 10) * GameManager.Instance.gameSpeed);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (0.3f * Time.deltaTime * Time.timeScale * 10));
-
-        gameObject.GetComponent<Rigidbody>().AddForce(movementDirection.normalized * Time.deltaTime * Time.timeScale * speed);
+        gameObject.GetComponent<Rigidbody>().AddForce((movementDirection.normalized * Time.deltaTime * speed) * GameManager.Instance.gameSpeed);
     }
 }
