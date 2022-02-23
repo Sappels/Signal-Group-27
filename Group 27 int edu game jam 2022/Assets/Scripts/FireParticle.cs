@@ -37,7 +37,7 @@ public class FireParticle : MonoBehaviour
         else if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Tree")
         {
             other.gameObject.tag = "ObstacleMAFF";
-            other.gameObject.name = "0,1";
+            other.gameObject.name = "0";
         }
     }
 }
