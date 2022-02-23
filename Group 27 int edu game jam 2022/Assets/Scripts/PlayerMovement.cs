@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (0.3f * Time.deltaTime * 10));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (0.3f * Time.deltaTime * Time.timeScale * 10));
 
         gameObject.GetComponent<Rigidbody>().AddForce(movementDirection.normalized * Time.deltaTime * speed);
     }
