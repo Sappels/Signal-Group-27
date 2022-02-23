@@ -1,13 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject rock;
     public GameObject fuelTank;
+
+    public List<GameObject> obstacles;
 
     private float timeToSpawn;
     private float spawnTimer;
     private int diceRoll = 0;
+
+
 
     private void Start()
     {
@@ -21,6 +25,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (spawnTimer <= 0)
         {
+            int _randomObj = Random.Range(0, obstacles.Count);
             diceRoll = Random.Range(1, 4);
             if (diceRoll == 1 || diceRoll == 2)
             {
@@ -30,7 +35,7 @@ public class ObstacleSpawner : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(rock, transform.position, Quaternion.identity);
+                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.identity);
                 }
             }
             diceRoll = 0;
