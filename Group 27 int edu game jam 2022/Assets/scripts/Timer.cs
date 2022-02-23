@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
 
         if (timer <= 0)
         {
-            if (!GameManager.Instance.hasBeenHit && !GameManager.Instance.outOfFuel)
+            if (!GameManager.Instance.outOfFuel)
             {
                 Debug.Log("You Win!");
             }
