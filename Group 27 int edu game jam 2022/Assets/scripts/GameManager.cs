@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] int frameRate;
+
     public float gameSpeed;
     public bool hasBeenHit;
     public bool outOfFuel;
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 60;
 
         if (instance == null)
             instance = this;
