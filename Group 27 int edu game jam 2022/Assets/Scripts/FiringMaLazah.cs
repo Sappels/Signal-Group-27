@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class FiringMaLazah : MonoBehaviour
 {
-    [SerializeField] float maxWidth = 18;
+    float maxWidth = 18;
 
     [SerializeField] ParticleSystem fireFX;
 
     public float fuelCapacity = 3;
 
-<<<<<<< HEAD
     float realFuel;
 
     
@@ -19,12 +18,12 @@ public class FiringMaLazah : MonoBehaviour
 
     private void Start()
     {
+        maxWidth = GameObject.Find("FuelBar").transform.localScale.x;
+
         realFuel = fuelCapacity;
     }
 
     // Update is called once per frame
-=======
->>>>>>> 37cc7927ba348897fbfe4a91f64cbcc13461763b
     void Update()
     {
         
