@@ -7,6 +7,8 @@ public class FiringMaLazah : MonoBehaviour
 {
     float maxWidth = 18;
 
+    [SerializeField] GameObject fireParticle;
+
     [SerializeField] ParticleSystem fireFX;
 
     public float fuelCapacity = 3;
@@ -15,6 +17,7 @@ public class FiringMaLazah : MonoBehaviour
 
     
     float cooldownTimer = 0;
+    float cooldown2;
 
     private void Start()
     {
@@ -28,7 +31,7 @@ public class FiringMaLazah : MonoBehaviour
     {
         
         cooldownTimer -= Time.deltaTime; //(This is vile but it solves some spaghetti with collision)
-
+        cooldown2 -= Time.deltaTime;
 
 
         if (Input.GetKey(KeyCode.Space))
@@ -38,6 +41,12 @@ public class FiringMaLazah : MonoBehaviour
                 realFuel -= Time.deltaTime;
                 fireFX.Play();
                 GameObject.Find("FuelBar").transform.localScale = new Vector3(realFuel / fuelCapacity * maxWidth, GameObject.Find("FuelBar").transform.localScale.y, GameObject.Find("FuelBar").transform.localScale.z);
+
+                if(cooldown2 <= 0)
+                {
+                    cooldown2 = 0.05f;
+                    Instantiate(fireParticle, transform.position, Quaternion.Euler(0,0,0));
+                }
             }
             else if(realFuel <= 0)
             {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - FuelTank
+  - ObstacleMAFF
   layers:
   - Default
   - TransparentFX
