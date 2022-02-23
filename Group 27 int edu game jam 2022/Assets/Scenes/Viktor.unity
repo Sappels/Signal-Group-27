@@ -1271,7 +1271,7 @@ MonoBehaviour:
   gameSpeed: 2
   hasBeenHit: 0
   outOfFuel: 0
-  player: {fileID: 0}
+  player: {fileID: 4861333554968763406}
   lazah: {fileID: 0}
 --- !u!4 &1623524689
 Transform:
@@ -1820,6 +1820,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5600057650336300387, guid: f0b912d2063aa7444a104525d1d9fe93, type: 3}
   m_PrefabInstance: {fileID: 1445609855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4861333554968763406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1768127535827645583, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+  m_PrefabInstance: {fileID: 6629100450091001985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6629100450091001985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1827,6 +1832,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1423830228801138228, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: speed
+      value: 3500
+      objectReference: {fileID: 0}
     - target: {fileID: 1423830228801138229, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1841,7 +1850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423830228801138229, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.58
+      value: -22.06
       objectReference: {fileID: 0}
     - target: {fileID: 1423830228801138229, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1886,6 +1895,18 @@ PrefabInstance:
     - target: {fileID: 1768127535827645583, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_Name
       value: Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180644857992950979, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180644857992950979, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0862
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180644857992950979, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1487
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
