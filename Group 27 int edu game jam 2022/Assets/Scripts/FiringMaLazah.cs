@@ -9,7 +9,6 @@ public class FiringMaLazah : MonoBehaviour
 
     public float fuelCapacity = 3;
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKey(KeyCode.Space))
