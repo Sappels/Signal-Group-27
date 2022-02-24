@@ -1759,6 +1759,7 @@ MonoBehaviour:
   outOfFuel: 0
   player: {fileID: 4861333554968763406}
   lazah: {fileID: 0}
+  GameOverScreen: {fileID: 0}
 --- !u!4 &1623524689
 Transform:
   m_ObjectHideFlags: 0
