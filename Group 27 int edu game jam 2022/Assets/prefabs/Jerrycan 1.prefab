@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2447727050704870451}
   - component: {fileID: 2447727050704870450}
   - component: {fileID: 7407398349352568189}
+  - component: {fileID: -1692460944473573067}
   m_Layer: 0
   m_Name: Jerrycan 1
   m_TagString: FuelTank
@@ -77,6 +78,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 18
   m_CollisionDetection: 0
+--- !u!114 &-1692460944473573067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447727050704870449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b209eaf9eae7b45aec8e9b270bd9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -100
+  minScale: 1
+  maxScale: 1
+  ticker: 0.15
+  needsTicker: 0
 --- !u!1001 &571651468343212526
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lazah.fuelCapacity <= 0 )
+        if (lazah.fuelCapacity <= 0)
         {
             outOfFuel = true;
         }

@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Tree"))
         {
+            GameManager.Instance.gameOver = true;
             Debug.Log("You died!");
             //Switch to game over screen, count out points.
         }
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("pleasedie"))
         {
+            GameManager.Instance.gameOver = true;
             Debug.Log("You died!");
         }
     }
