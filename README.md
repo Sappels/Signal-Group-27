@@ -1,5 +1,3 @@
-# Signal-Group-27
-
 <h1>Game Title: Signal 27</h1>
 <a href ="https://sappels.itch.io/signal-27"><p>Itch.io page</p></a>
 
