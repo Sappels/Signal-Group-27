@@ -5,6 +5,7 @@ public class Score : MonoBehaviour
 {
     public TMP_Text scoreText;
     public float score;
+    public int treesDestroyed = 0;
 
     private float timer = 3;
 

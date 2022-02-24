@@ -11,6 +11,7 @@ public class FiringMaLazah : MonoBehaviour
     [SerializeField] ParticleSystem fireFX;
     [SerializeField] GameObject fuelBar;
 
+
     private AudioSource SFXFireLoopAS;
     private AudioSource SFXFireEndAS;
 

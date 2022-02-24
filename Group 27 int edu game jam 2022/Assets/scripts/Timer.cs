@@ -27,10 +27,16 @@ public class Timer : MonoBehaviour
             if (!GameManager.Instance.outOfFuel)
             {
                 Debug.Log("You Win!");
+                GameManager.Instance.goodEnding = true;
+                GameManager.Instance.badEnding = false;
+                //Load win cutscene
             }
             else
             {
                 Debug.Log("You lose");
+                GameManager.Instance.goodEnding = false;
+                GameManager.Instance.badEnding = true;
+                //Load lose cutscene
             }
         }
     }
