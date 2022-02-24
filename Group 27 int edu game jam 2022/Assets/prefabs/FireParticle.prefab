@@ -60,3 +60,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   despawnTimer: 0.4
+  ScoreHolder: {fileID: 0}
