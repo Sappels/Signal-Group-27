@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3191477014673228061}
   - component: {fileID: 3191477014673228060}
   - component: {fileID: 3191477014673228050}
+  - component: {fileID: 6182661164877437121}
   - component: {fileID: 3191477014673228049}
   m_Layer: 0
   m_Name: FuelTank
@@ -115,6 +116,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1.6976029}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6182661164877437121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191477014673228048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7812897, y: 7.4140663, z: 6.1905236}
+  m_Center: {x: 0.0631749, y: 0.0000000010385914, z: -0.061426643}
 --- !u!114 &3191477014673228049
 MonoBehaviour:
   m_ObjectHideFlags: 0
