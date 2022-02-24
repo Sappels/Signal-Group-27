@@ -12,9 +12,12 @@ public class CutScene : MonoBehaviour
     [SerializeField] GameObject bonBonObject;
     [SerializeField] GameObject timerObject;
 
+
+    //A crunch a day keeps the programmer's pride away
     bool startFlameTimer = false;
     bool fireSound = false;
     bool fart = false;
+    bool destroy = false;
 
     [SerializeField] float flameTimer = 2.5f;
 
@@ -48,6 +51,13 @@ public class CutScene : MonoBehaviour
                 bonBonObject.GetComponent<Animator>().SetBool("SupremeVictory", true);
 
                 fart = true;
+            }
+
+            if(!destroy)
+            {
+                Destroy(GameObject.Find("Spawners"));
+                GameObject.Find("SoundFX (1)").GetComponent<StepSpeed>().enabled = false;
+                destroy = true;
             }
         }
 
