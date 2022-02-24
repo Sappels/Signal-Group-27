@@ -44,6 +44,7 @@ public class Score : MonoBehaviour
             finalScore = score;
             finalScore += (500 * treesDestroyed);
             PlayerPrefs.SetFloat("finalScore", finalScore);
+            PlayerPrefs.SetInt("treesDestroyed", treesDestroyed);
 
         }
     }
