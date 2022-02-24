@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public bool hasBeenHit;
     public bool outOfFuel;
 
+    public bool gameOver;
+    public bool goodEnding;
+    public bool badEnding;
+
     public GameObject player;
     public FiringMaLazah lazah;
 

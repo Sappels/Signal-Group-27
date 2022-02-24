@@ -8,6 +8,8 @@ TagManager:
   - FuelTank
   - ObstacleMAFF
   - Tree
+  - MapWrap
+  - pleasedie
   layers:
   - Default
   - TransparentFX

@@ -40,4 +40,22 @@ public class PlayerMovement : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody>().AddForce((movementDirection.normalized * Time.deltaTime * speed) * GameManager.Instance.gameSpeed);
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Tree"))
+        {
+            Debug.Log("You died!");
+            //Switch to game over screen, count out points.
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("pleasedie"))
+        {
+            Debug.Log("You died!");
+        }
+    }
 }
