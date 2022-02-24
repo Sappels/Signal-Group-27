@@ -10,8 +10,11 @@ public class ObstacleSpawner : MonoBehaviour
     private float timeToSpawn;
     private float spawnTimer;
 
+    private Vector3 yRotation;
+
     private void Start()
     {
+        yRotation.y = Random.Range(-100, 100);
         timeToSpawn = Random.Range(1f, 8f);
         spawnTimer = timeToSpawn;
     }
@@ -27,11 +30,12 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 if (Random.value > 0.9f)
                 {
-                    Instantiate(fuelTank, transform.position, Quaternion.identity);
+                    Debug.Log("fueltime!");
+                    Instantiate(fuelTank, transform.position, Quaternion.Euler(-15, 0, 0));
                 }
                 else
                 {
-                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.identity);
+                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.Euler(-15, 0, 0));
                 }
             }
 

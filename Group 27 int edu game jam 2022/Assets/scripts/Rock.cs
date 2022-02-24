@@ -5,13 +5,15 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     [SerializeField] float speed;
-
     [SerializeField] float minScale;
     [SerializeField] float maxScale;
-
+    [SerializeField] float ticker;
+    
+    [SerializeField] bool needsTicker;
+    
     private float scale;
-
     private Rigidbody rockRB;
+
 
     void Start()
     {
@@ -22,6 +24,27 @@ public class Rock : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rockRB.AddRelativeForce((Vector3.forward * speed) * GameManager.Instance.gameSpeed);
+        if (needsTicker)
+        {
+            ticker -= Time.deltaTime;
+            if (ticker <= 0)
+            {
+                rockRB.AddRelativeForce((Vector3.forward * speed) * GameManager.Instance.gameSpeed);
+            }
+        }
+        else
+        {
+            rockRB.AddRelativeForce((Vector3.forward * speed) * GameManager.Instance.gameSpeed);
+        }
+        
+        rockRB.velocity = (Vector3.ClampMagnitude(rockRB.velocity, 25f) * GameManager.Instance.gameSpeed);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            //Game over screen
+        }
     }
 }
