@@ -4,6 +4,8 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
+
     public float score;
     public int treesDestroyed = 0;
 
@@ -19,28 +21,29 @@ public class Score : MonoBehaviour
     {
         timer -= Time.deltaTime;
         scoreText.text = "Score: " + (int)score;
-        if (timer <= 0)
+        if (timer <= 0 && !GameManager.Instance.reachedTop)
         {
             score += ((Time.deltaTime * 10) * GameManager.Instance.gameSpeed);
         }
+
+        if (GameManager.Instance.reachedTop)
+        {
+            scoreText.gameObject.SetActive(false);
+            finalScoreText.gameObject.SetActive(true);
+            finalScoreText.text = "Your final score is: " + (int)PlayerPrefs.GetFloat("finalScore");
+        }
+
+        CalculateFinalScore();
     }
 
     private void CalculateFinalScore()
     {
-        var gmInstance = GameManager.Instance;
-        if (gmInstance.gameOver)
+        if (GameManager.Instance.gameOver || GameManager.Instance.reachedTop)
         {
+            Debug.Log("Checking your max score!");
             finalScore = score;
-        }
-        else if (gmInstance.badEnding)
-        {
-            finalScore = score;
-            finalScore += (1000 * treesDestroyed);
-        }
-        else if (gmInstance.goodEnding)
-        {
-            finalScore = score;
-            finalScore += (1000 * treesDestroyed);
+            finalScore += (500 * treesDestroyed);
+            PlayerPrefs.SetFloat("finalScore", finalScore);
 
         }
     }

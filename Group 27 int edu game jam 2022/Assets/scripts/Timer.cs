@@ -20,23 +20,13 @@ public class Timer : MonoBehaviour
         timerText.text = "Time left: " + (int)timer;
 
         timer -= Time.deltaTime;
-
+        if (timer <= 5)
+        {
+            GameManager.Instance.noMoreSpawns = true;
+        }
         if (timer <= 0)
         {
-            if (!GameManager.Instance.outOfFuel)
-            {
-                Debug.Log("You Win!");
-                GameManager.Instance.goodEnding = true;
-                GameManager.Instance.badEnding = false;
-                //Load win cutscene
-            }
-            else
-            {
-                Debug.Log("You lose");
-                GameManager.Instance.goodEnding = false;
-                GameManager.Instance.badEnding = true;
-                //Load lose cutscene
-            }
+            timerText.gameObject.SetActive(false);
         }
     }
 }

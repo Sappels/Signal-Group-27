@@ -49,8 +49,6 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.Instance.gameOver = true;
             SceneManager.LoadScene("Game Over Screen");
-            Debug.Log("You died!");
-            
         }
     }
 
@@ -60,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         {
             GameManager.Instance.gameOver = true;
             SceneManager.LoadScene("Game Over Screen");
-            Debug.Log("You died!");
         }
     }
 }

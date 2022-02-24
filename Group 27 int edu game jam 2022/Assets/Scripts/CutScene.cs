@@ -36,6 +36,7 @@ public class CutScene : MonoBehaviour
 
         if (timer <= 0)
         {
+            GameManager.Instance.reachedTop = true;
             if (GameObject.Find("Soldier").GetComponent<FiringMaLazah>().realFuel > 0)
             {
 

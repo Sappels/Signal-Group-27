@@ -39,12 +39,4 @@ public class Rock : MonoBehaviour
         
         rockRB.velocity = (Vector3.ClampMagnitude(rockRB.velocity, 25f) * GameManager.Instance.gameSpeed);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            //Game over screen
-        }
-    }
 }

@@ -22,25 +22,27 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         spawnTimer -= Time.deltaTime;
-
-        if (spawnTimer <= 0)
+        if (!GameManager.Instance.noMoreSpawns)
         {
-            int _randomObj = Random.Range(0, obstacles.Count);
-            if (Random.value > 0.4f)
+            if (spawnTimer <= 0)
             {
-                if (Random.value > 0.9f)
+                int _randomObj = Random.Range(0, obstacles.Count);
+                if (Random.value > 0.4f)
                 {
-                    Debug.Log("fueltime!");
-                    Instantiate(fuelTank, transform.position, Quaternion.Euler(-15, 0, 0));
+                    if (Random.value > 0.9f)
+                    {
+                        Debug.Log("fueltime!");
+                        Instantiate(fuelTank, transform.position, Quaternion.Euler(-15, 0, 0));
+                    }
+                    else
+                    {
+                        Instantiate(obstacles[_randomObj], transform.position, Quaternion.Euler(-15, 0, 0));
+                    }
                 }
-                else
-                {
-                    Instantiate(obstacles[_randomObj], transform.position, Quaternion.Euler(-15, 0, 0));
-                }
-            }
 
-            timeToSpawn = Random.Range(2f, 4f);
-            spawnTimer = timeToSpawn;
+                timeToSpawn = Random.Range(2f, 4f);
+                spawnTimer = timeToSpawn;
+            }
         }
     }
 }
