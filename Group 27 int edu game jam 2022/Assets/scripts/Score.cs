@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     public float score;
     public int treesDestroyed = 0;
 
+    private float finalScore;
     private float timer = 3;
 
     void Start()
@@ -21,6 +22,26 @@ public class Score : MonoBehaviour
         if (timer <= 0)
         {
             score += ((Time.deltaTime * 10) * GameManager.Instance.gameSpeed);
+        }
+    }
+
+    private void CalculateFinalScore()
+    {
+        var gmInstance = GameManager.Instance;
+        if (gmInstance.gameOver)
+        {
+            finalScore = score;
+        }
+        else if (gmInstance.badEnding)
+        {
+            finalScore = score;
+            finalScore += (1000 * treesDestroyed);
+        }
+        else if (gmInstance.goodEnding)
+        {
+            finalScore = score;
+            finalScore += (1000 * treesDestroyed);
+
         }
     }
 }

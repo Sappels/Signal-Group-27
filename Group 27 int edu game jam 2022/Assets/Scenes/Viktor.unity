@@ -2054,7 +2054,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040402613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13303,6 +13303,26 @@ PrefabInstance:
       propertyPath: ScoreHolder
       value: 
       objectReference: {fileID: 627728352}
+    - target: {fileID: 1423830228801138233, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.06728206
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423830228801138233, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16951409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423830228801138233, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_Size.z
+      value: 0.057342738
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423830228801138233, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_Center.x
+      value: -0.006145513
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423830228801138233, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0024335803
+      objectReference: {fileID: 0}
     - target: {fileID: 1511887031340550345, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_Drag
       value: 6
@@ -13318,6 +13338,14 @@ PrefabInstance:
     - target: {fileID: 1768127535827645583, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_Name
       value: Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067811947813937138, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067811947813937138, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7180644857992950979, guid: 9a41e4bdebb8c13478d4038f21b709c9, type: 3}
       propertyPath: m_LocalPosition.x

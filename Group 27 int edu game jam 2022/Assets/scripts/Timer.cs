@@ -5,11 +5,10 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public TMP_Text timerText;
+    
     public float startTimer;
     private float timer;
-
-    public TMP_Text timerText;
-
 
     void Start()
     {
