@@ -17,7 +17,7 @@ public class FiringMaLazah : MonoBehaviour
 
     public float fuelCapacity = 3;
 
-    float realFuel;
+    [HideInInspector] public float realFuel;
 
     bool started = false;
 

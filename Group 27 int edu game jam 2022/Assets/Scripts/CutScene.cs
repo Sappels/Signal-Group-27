@@ -33,7 +33,7 @@ public class CutScene : MonoBehaviour
 
         if (timer <= 0)
         {
-            if (!GameManager.Instance.outOfFuel)
+            if (GameObject.Find("Soldier").GetComponent<FiringMaLazah>().realFuel > 0)
             {
 
                 animationObject.GetComponent<Animator>().SetBool("SupremeVictory", true);
