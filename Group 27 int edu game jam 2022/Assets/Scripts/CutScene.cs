@@ -12,6 +12,10 @@ public class CutScene : MonoBehaviour
     [SerializeField] GameObject bonBonObject;
     [SerializeField] GameObject timerObject;
 
+    private FiringMaLazah lazah;
+    private AudioSource sfxFireLoop;
+    private AudioSource sfxFireEnd;
+
 
     //A crunch a day keeps the programmer's pride away
     bool startFlameTimer = false;
@@ -26,6 +30,9 @@ public class CutScene : MonoBehaviour
 
     void Start()
     {
+        sfxFireLoop = GameObject.Find("SFXFireLoop").GetComponent<AudioSource>();
+        sfxFireEnd = GameObject.Find("SFXFireEnd").GetComponent<AudioSource>();
+        lazah = GameObject.Find("Soldier").GetComponent<FiringMaLazah>();
         timer = timerObject.GetComponent<Timer>().startTimer;
     }
 
@@ -37,7 +44,7 @@ public class CutScene : MonoBehaviour
         if (timer <= 0)
         {
             GameManager.Instance.reachedTop = true;
-            if (GameObject.Find("Soldier").GetComponent<FiringMaLazah>().realFuel > 0)
+            if (lazah.realFuel > 0)
             {
 
                 animationObject.GetComponent<Animator>().SetBool("SupremeVictory", true);
@@ -56,7 +63,7 @@ public class CutScene : MonoBehaviour
 
             if(!destroy)
             {
-                Destroy(GameObject.Find("Spawners"));
+                //Destroy(GameObject.Find("Spawners"));
                 GameObject.Find("SoundFX (1)").GetComponent<StepSpeed>().enabled = false;
                 destroy = true;
             }
@@ -80,8 +87,8 @@ public class CutScene : MonoBehaviour
                 if(fireSound)
                 {
                     fireSound = false;
-                    GameObject.Find("SFXFireLoop").GetComponent<AudioSource>().Stop();
-                    GameObject.Find("SFXFireEnd").GetComponent<AudioSource>().Play();
+                    sfxFireLoop.Stop();
+                    sfxFireEnd.Play();
                 }
             }
         }

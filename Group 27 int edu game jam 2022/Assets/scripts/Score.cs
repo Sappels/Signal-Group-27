@@ -5,6 +5,7 @@ public class Score : MonoBehaviour
 {
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
+    public TMP_Text treesdesText;
 
     public float score;
     public int treesDestroyed = 0;
@@ -30,6 +31,7 @@ public class Score : MonoBehaviour
         {
             scoreText.gameObject.SetActive(false);
             finalScoreText.gameObject.SetActive(true);
+            treesdesText.gameObject.SetActive(true);
             finalScoreText.text = "Your final score is: " + (int)PlayerPrefs.GetFloat("finalScore");
         }
 
@@ -40,7 +42,6 @@ public class Score : MonoBehaviour
     {
         if (GameManager.Instance.gameOver || GameManager.Instance.reachedTop)
         {
-            Debug.Log("Checking your max score!");
             finalScore = score;
             finalScore += (500 * treesDestroyed);
             PlayerPrefs.SetFloat("finalScore", finalScore);

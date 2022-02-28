@@ -10,9 +10,11 @@ public class FireParticle : MonoBehaviour
     [SerializeField] GameObject ScoreHolder;
     private Score score;
 
+    private AudioSource sfxCrumble;
 
     private void Start()
     {
+        sfxCrumble = GameObject.Find("SFXCrumble").GetComponent<AudioSource>();
         ScoreHolder = GameObject.Find("ScoreandTimerHolder");
         score = ScoreHolder.GetComponent<Score>();
     }
@@ -30,7 +32,6 @@ public class FireParticle : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
         if(other.gameObject.tag == "ObstacleMAFF")
         {
             other.gameObject.name = (float.Parse(other.gameObject.name) - Time.deltaTime).ToString();
@@ -38,8 +39,8 @@ public class FireParticle : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 score.treesDestroyed++;
-                GameObject.Find("SFXCrumble").GetComponent<AudioSource>().pitch = Random.Range(0.7f, 2f);
-                GameObject.Find("SFXCrumble").GetComponent<AudioSource>().Play();
+                sfxCrumble.pitch = Random.Range(0.7f, 2f);
+                sfxCrumble.Play();
             }
         }
         else if (other.gameObject.tag == "Tree")
